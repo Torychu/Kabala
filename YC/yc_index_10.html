@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <textarea name="" id="" cols="30" rows="10">얄코 강의 진행중~</textarea>
+    <!-- cols는 글자수 단위의 너비(기본값은 20,자동 완성 쓸 경우 30인듯?) -->
+    <!-- rows의 경우 표시되는 줄의 수(다만 한계치는 아님. 보여주는 수를 넘을 경우 스크롤이 생기거나 함) -->
+    <!-- textarea는 기본값을 textarea 사이에 넣음 -->
+    <!-- 추가적인 속성 또한 설정 가능함(자세한건 MDN의 textarea 참고) -->
+    <!-- placeholder를 추가하려면 여는 태그와 닫는 태그를 무조건 붙여야함 -->
+  </body>
+
+  <br /><br /><br />
+
+  <h1>옵션들을 사용하는 태그</h1>
+
+  <h2>select, option 태그</h2>
+
+  <label for="lang">언어</label>
+  <br />
+  <select id="lang">
+    <!-- "lang" 뒤에 multiple을 적어내면 다중 선택이 가능하기는 하나 여러모로 불편하기에 체크박스를 활용하는 편이 좋음-->
+    <option value="">-- 언어 선택 --</option>
+    <option value="html">HTML</option>
+    <!-- 맨 위에 있지 않은 값을 기본값으로 두려면 selected 활용 ex) value="html" selected-->
+    <option value="css">CSS</option>
+    <option value="js">자바스크립트</option>
+    <option value="ts">타입스크립트</option>
+    <!-- 실제로 서버로 전송될 값은 value에 -->
+  </select>
+
+  <br /><br />
+
+  <h2>optgroup 태그</h2>
+
+  <label for="shopping">쇼핑 목록</label>
+  <br />
+  <select id="shopping">
+    <optgroup label="과일">
+      <option value="f_apl">사과</option>
+      <option value="f_grp">포도</option>
+      <option value="f_org">오렌지</option>
+    </optgroup>
+    <optgroup label="채소">
+      <option value="v_crt">당근</option>
+      <option value="v_tmt">토마토</option>
+      <option value="v_ept">가지</option>
+    </optgroup>
+    <optgroup label="육류">
+      <option value="m_bef">소고기</option>
+      <option value="m_prk">돼지고기</option>
+      <option value="m_ckn">닭고기</option>
+    </optgroup>
+  </select>
+
+  <br /><br />
+
+  <h2>datalist 태그</h2>
+
+  <label for="job">현재 직업</label>
+  <br />
+  <input id="job" list="jobs" />
+  <datalist id="jobs">
+    <option value="학생"></option>
+    <option value="디자이너"></option>
+    <option value="퍼블리셔"></option>
+    <option value="개발자"></option>
+  </datalist>
+  <!-- 직접 적는것도 가능하지만 그 외에 기본적인 추천값을 넣어주는 datalist 태그 -->
+
+  <br /><br />
+
+  <h1>정도를 표현하는 태그</h1>
+
+  <h2>progress 태그</h2>
+  <progress max="100" value="50">50%</progress>
+  <!-- 최대값인 100을 지정, value에는 실제로 어느정도로 차있는지 넣어주고 태그와 태그 사이에는 어느정도인지 텍스트로 표시 -->
+  <!-- progress는 동적인 값을 나타내는데 쓰임 ex)js와의 연계를 통한 다운로드 상태 표시-->
+
+  <br /><br />
+
+  <h2>meter 태그</h2>
+  <!-- 고정된 수치값을 나타내는 태그로 캐릭터 스탯 혹은 디스크 사용랑 등을 나타내는데 쓰임 -->
+  <meter min="0" max="100" low="33" high="67" optimum="50" value="20">
+    <!-- low,high를 이용해 바를 3등분 후 optimum을 이용해 값의 상태를 분류 -->
+    <!-- ex) 위 meter 태그에선 low인 33과 high인 67 사이로 범위를 설정 후 이상적인 값이냐 아니냐에 따라 색으로 분류-->
+    <!-- 아마 최적의 값에서 3등분된 기준을 2번 이상 통과하면 붉은색,1번은 노란색,없다면 초록색인듯 한데 안쓰인다니까 패스 -->
+    20달러
+  </meter>
+
+  <meter min="0" max="100" low="33" high="67" optimum="50" value="50">
+    50달러
+  </meter>
+
+  <meter min="0" max="100" low="33" high="67" optimum="50" value="80">
+    80달러
+  </meter>
+
+  <br />
+
+  <meter min="0" max="100" low="33" high="67" optimum="10" value="20">
+    20달러
+  </meter>
+
+  <meter min="0" max="100" low="33" high="67" optimum="10" value="50">
+    50달러
+  </meter>
+
+  <meter min="0" max="100" low="33" high="67" optimum="10" value="80">
+    80달러
+  </meter>
+
+  <br />
+
+  <meter min="0" max="100" low="33" high="67" optimum="90" value="20">
+    20달러
+  </meter>
+
+  <meter min="0" max="100" low="33" high="67" optimum="90" value="50">
+    50달러
+  </meter>
+
+  <meter min="0" max="100" low="33" high="67" optimum="90" value="80">
+    80달러
+  </meter>
+</html>

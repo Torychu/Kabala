@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>텍스트 관련 인풋 타입</h1>
+
+    <form action="#">
+      <label for="txtIp">text</label> <br />
+      <input id="txtIp" type="text" placeholder="5자 이하" maxlength="5" />
+      <!--placeholder는 입력되지 않은 칸에서의 텍스트 표시를 담당-->
+      <br /><br />
+
+      <label for="pwdIp">password</label> <br />
+      <input id="pwdIp" type="password" placeholder="4자 이상" minlength="4" />
+      <br /><br />
+
+      <label for="srchIp">search</label> <br />
+      <input id="srchIp" type="search" />
+      <br /><br />
+
+      <label for="tlIp">tel</label> <br />
+      <input id="tlIp" type="tel" />
+      <br /><br />
+      <button type="submit">제출</button>
+    </form>
+
+    <h1>숫자 관련 인풋 타입</h1>
+
+    <form action="#">
+      <label for="numIp">number</label> <br />
+      <input id="numIp" type="number" min="0" max="10" />
+      <br /><br />
+
+      <label for="rgIp">range</label> <br />
+      <input id="rgIp" type="range" min="0" max="100" step="20" />
+      <br /><br />
+
+      <label for="dtIp">date</label> <br />
+      <input id="dtIp" type="date" min="2020-01-01" max="2030-12-31" />
+      <br /><br />
+    </form>
+
+    <br /><br /><br />
+
+    <h1>체크 관련 인풋 타입</h1>
+
+    <form action="#">
+      <h2>checkbox</h2>
+      <input id="cbIp" type="checkbox" checked />
+      <label for="cbIp">유기농</label> <br />
+
+      <h2>radio</h2>
+      <input type="radio" name="fruit" id="f_apple" value="apple" checked />
+      <label for="f_apple">사과</label>
+      <input type="radio" name="fruit" id="f_grape" value="grape" />
+      <label for="f_grape">포도</label>
+      <input type="radio" name="fruit" id="f_orange" value="orange" />
+      <label for="f_orange">오렌지</label>
+      <!-- 이름(name)을 같게 해줘야 radio를 통해 중복 설정이 안되게끔 할 수 있음 -->
+      <br />
+
+      <input type="radio" name="vege" id="v_carrot" value="carrot" checked />
+      <!-- checked를 통해 웹 페이지를 열었을 때 기본적으로 체크가 되어있게 설정 가능 -->
+      <label for="v_carrot">당근</label>
+      <input type="radio" name="vege" id="v_tomato" value="tomato" />
+      <!-- 밸류는(value) 실제로 전해지는 값 ex)표시는 토마토로 나오지만 실제로 전달되는 값은 tomato -->
+      <label for="v_tomato">토마토</label>
+      <input type="radio" name="vege" id="v_eggplant" value="eggplant" />
+      <label for="v_eggplant">가지</label>
+    </form>
+
+    <br /><br /><br />
+
+    <h1>기타 인풋 타입</h1>
+
+    <form action="#">
+      <label for="fileIp">file</label> <br />
+      <input id="fileIp" type="file" accept="image/png, image/jpeg" multiple />
+      <!-- accept를 통해 어떤 파일의 형식을 받을지 선택 가능 / 아무것도 적지 않을 경우 모두 가능 -->
+      <!-- multiple은 파일을 여러개 선택할 수 있게 해줌 -->
+      <br /><br />
+
+      <label for="hdnIp">hidden</label> <br />
+      <input id="hdnIp" type="hidden" />
+      <!-- 굳이 사용자에게 보여줄 필요 없는 경우 hidden을 사용 -->
+    </form>
+
+    <br />
+    <hr />
+    <br />
+
+    <form action="#">
+      <label for="emlIp">email</label> <br />
+      <input id="emlIp" type="email" />
+      <!-- 이메일 타입을 통해 이메일 형식을 요구할 수는 있으나 제대로 적지 않아도 받아들여지는 경우가 있기에 JS를 권장 -->
+      <br /><br />
+
+      <button type="submit">제출</button>
+    </form>
+  </body>
+
+  <br /><br /><br />
+
+  <h1>인풋 요소 공통(대부분) 속성</h1>
+
+  <form action="#">
+    <label for="valIp">value</label> <br />
+    <input id="valIp" type="text" value="지정됨" />
+    <!-- 밸류는 디폴트값을 설정해놓는 용도 -->
+    <br /><br />
+
+    <label for="afIp">autofocus</label> <br />
+    <!-- autofocus는 페이지가 새로고침 되더라도 클릭하지 않아도 기본적으로 포커스 되어있게 해줌 -->
+    <input id="afIp" type="text" placeholder="자동 포커스됨" autofocus />
+    <!-- placeholder는 무언가 입력되기 전까지 텍스트를 띄워놓는 것 -->
+    <br /><br />
+
+    <label for="roIp">readonly</label> <br />
+    <!-- readonly는 읽기만 가능하게 함 -->
+    <input id="roIp" type="text" value="읽기만 가능, 전송됨" readonly />
+    <br /><br />
+
+    <label for="rqIp">required</label> <br />
+    <input id="rqIp" type="text" placeholder="필수입력!" required />
+    <!-- required는 입력하지 않을 경우 넘어가지 못하게 함(필수 제출) -->
+    <br /><br />
+
+    <label for="daIp">disabled</label> <br />
+    <input id="daIp" type="text" placeholder="입력불가, 전송 안됨" disabled />
+    <!-- disabled는 선택을 못하게 함 -->
+    <br /><br />
+    <input type="radio" name="fruit" id="f_apple" value="apple" checked />
+    <!-- 체크를 이용한 기본 설정 -->
+    <label for="f_apple">사과</label>
+    <input type="radio" name="fruit" id="f_grape" value="grape" />
+    <label for="f_grape">포도</label>
+    <input type="radio" name="fruit" id="f_orange" value="orange" disabled />
+    <!-- disabled를 이용한 선택불가 설정 -->
+    <label for="f_orange">오렌지(품절)</label>
+    <br />
+
+    <br /><br />
+
+    <button type="submit">제출</button>
+  </form>
+</html>
